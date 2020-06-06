@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appreciation_kind: 1
+  donor_fullname: MyString
+  donor_occupation: MyString
+  donor_message: MyText
+  coffees_quantity: 1
+  hug_seconds: 1.5
+
+two:
+  appreciation_kind: 1
+  donor_fullname: MyString
+  donor_occupation: MyString
+  donor_message: MyText
+  coffees_quantity: 1
+  hug_seconds: 1.5

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entity: MyString
+  account_email: MyString
+  identification: 1
+  account_kind: MyString
+
+two:
+  entity: MyString
+  account_email: MyString
+  identification: 1
+  account_kind: MyString
