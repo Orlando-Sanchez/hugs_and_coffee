@@ -1,28 +1,40 @@
-<h2>Registro de usuario</h2>
+<%= render 'layouts/header' %>
 
-<h2>Tus datos</h2>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class= "main">
+  <div class= "atras-wrapper">
+    <%= link_to root_path do%>
+      <%= image_tag("Vector.svg", class: "vector-img") %>
+      <span class= "atras">Atrás</span>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class= "signup-form-container">
+    <div>
+      <h2 class= "form-header">Registro de usuario</h2>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class= "signup-form">
+          <h2 class="tus-datos">Tus datos</h2>
+          <div class= "field">
+            <%= f.label :email, 'Correo electrónico', class: "label" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field-field" %>
+          </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+          <div class= "field">
+            <%= f.label :password, 'Contraseña', class: "label" %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "field-field" %>
+          </div>
+
+          <div class= "field bottom-field">
+            <%= f.label :password_confirmation, 'Confirmar contraseña', class: "label" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field-field" %>
+          </div>
+        </div>
+        <div class= "submit-btn-wrapper">
+          <%= f.submit "Registrarme", class: "submit" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

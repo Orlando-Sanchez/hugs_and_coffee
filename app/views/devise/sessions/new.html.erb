@@ -1,26 +1,47 @@
-<h2>Log in</h2>
+<%= render 'layouts/header' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class= "main">
+  <div class= "atras-wrapper">
+    <%= link_to root_path do%>
+      <%= image_tag("Vector.svg") %>
+      <span class= "atras">Atrás</span>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <div class= "login-form-container">
+    <div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class= "login-form">
+          <h2 class= "login-header">Login</h2>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <div class="field">
+            <%= f.label :email, 'Correo electrónico', class: "label" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, 'Contraseña', class: "label" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "field-field" %>
+          </div>
+        </div> 
+        <div class= "submit-btn-wrapper">
+          <%= f.submit "Entrar", class: "submit" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
+</div>
 <%= render "devise/shared/links" %>
+
+
+<%
+=begin%>
+  
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, 'Recordarme' %>
+      </div>
+    <% end %> 
+<%
+=end%>

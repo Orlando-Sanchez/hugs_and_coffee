@@ -1,6 +1,19 @@
-<header>
-  <div>
-    <% if user_signed_in? %>
-      
-  </div>
+<header class= "header">
+  <%= link_to root_path do %>
+    <div class= "header-logo">
+      <h1 class= "logo-font">A&C</h1> 
+    </div>      
+  <% end %>
+  <% if current_page?(root_path) %>
+    <% unless user_signed_in? %>
+      <%= link_to new_user_session_path do %>
+        <div class= "login-container" >
+          <h1 class= "login-link">Login</h1>
+        </div>         
+      <% end %>   
+    <% end %>
+  <% else %>
+  <% end %>
+  <%
+  # <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
 </header>
