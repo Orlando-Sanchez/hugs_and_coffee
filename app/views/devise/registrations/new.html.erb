@@ -1,10 +1,10 @@
 <%= render 'layouts/header' %>
 
 <div class= "main">
-  <div class= "atras-wrapper">
+  <div class= "back-wrapper">
     <%= link_to root_path do%>
       <%= image_tag("Vector.svg", class: "vector-img") %>
-      <span class= "atras">Atrás</span>
+      <span class= "back">Atrás</span>
     <% end %>
   </div>
 
@@ -15,7 +15,7 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class= "signup-form">
-          <h2 class="tus-datos">Tus datos</h2>
+          <h2 class="your-data">Tus datos</h2>
           <div class= "field">
             <%= f.label :email, 'Correo electrónico', class: "label" %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field-field" %>
