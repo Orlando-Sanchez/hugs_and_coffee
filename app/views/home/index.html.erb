@@ -1,33 +1,32 @@
-<%= render 'layouts/header' %>
-
-<div class= "home-one-container">
-  <div class= "coffees-img-wrapper">
+<%= render 'layouts/main_header' %>
+<div class="home-one-container">
+  <div class="coffees-img-wrapper">
     <%= image_tag("coffees.svg", class: "coffees-img") %>
   </div>
-  <div class= "intro-text-wrapper">
+  <div class="intro-text-wrapper">
     <div>
-      <h1 class= "intro-text-thick">Un café es un abrazo atrapado en una taza</h1>
+      <h1 class="intro-text-thick second-font ">Un café es un abrazo atrapado en una taza</h1>
     </div>
   </div>
-  <div class= "intro-text-thin" >
+  <div class="intro-text-thin primary-font" >
     <h2>Recibe aprecio y gratitud mediante donaciones online</h2>
   </div>
-  <div class= "profile-link-wrapper">
-    <%= link_to new_user_registration_path, class: "profile-link" do %>
-        <h2 class= "profile-link-text">Crear mi perfil</h2>
+  <div class="create-profile-link-wrapper">
+    <%= link_to new_user_registration_path, class: "create-profile-link second-bkgrnd" do %>
+        <h2 class="create-profile-link-text primary-font">Crear mi perfil</h2>
     <% end %>
   </div>
 </div>
-<div class= "home-two-container">
-  <div class= "intro-text-container">
+<div class="home-two-container second-bkgrnd">
+  <div class="intro-text-container">
     <div>
-      <h1 class= "intro-text-thick-2">Un perfil dedicado a recibir agradecimientos</h1>
+      <h1 class="intro-text-thick-2 second-font ">Un perfil dedicado a recibir agradecimientos</h1>
     </div>
   </div>
-  <div class= "intro-text-last">
+  <div class="intro-text-last primary-font">
     <h2>Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.</h2>
   </div>
-  <div class= "cellphones-img-wrapper">
+  <div class="cellphones-img-wrapper">
     <%= image_tag("cellphones.svg", class: "cellphones-img") %>
   </div>
 </div>

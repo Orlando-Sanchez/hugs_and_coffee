@@ -1,0 +1,9 @@
+<%= render 'layouts/profile_header' %>
+<div>
+  <div>
+    <%= @profile.biography %>
+  </div>
+  <div>
+    <%= image_tag @profile.avatar if @profile.avatar.present? %>
+  </div>
+</div>

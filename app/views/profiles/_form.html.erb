@@ -1,0 +1,52 @@
+<%= form_with model: @profile do |f| %> 
+  <div class="form profile-form-partone">
+    <div class="field">
+      <%= f.label :fullname, 'Nombre', class: "label primary-font" %>
+      <%= f.text_field :fullname, class: 'field-field third-bkgrnd' %>
+    </div>
+    <div class="field">
+      <%= f.label :occupation, 'Ocupación', class: "label primary-font" %>
+      <%= f.text_field :occupation, class: 'field-field third-bkgrnd' %>
+    </div>
+    <div class="field">
+      <%= f.label :biography, 'Biografía', class: "label primary-font" %>
+      <%= f.text_field :biography, class: 'bio-field-field third-bkgrnd' %>
+    </div>
+  </div>
+  <div class="form profile-form-parttwo">
+    <div class="field">
+      <%= f.label :coffee_price, 'Monto de un café', class: "label primary-font" %>
+      <%= f.text_field :coffee_price, class: 'field-field third-bkgrnd' %>
+    </div>
+    <div class="field">
+      <%= f.label :currency_sign, 'Símbolo de la moneda', class: "label primary-font" %>
+      <%= f.text_field :currency_sign, class: 'field-field third-bkgrnd' %>
+    </div>
+
+    <%
+=begin%>
+ <span class="label primary-font">Multiplicadores</span>
+
+    <ul class="mulltipiers-wrapper">
+      <%= f.fields_for :multipliers do |multipliers_form| %>
+        <li>
+          <%= multipliers_form.number_field(:quantity, in: 1.0..10.0, step: 1.0, class: 'multiplier second-font') %>
+        </li>
+      <% end %>
+    </ul>   
+<%
+=end%>
+  <%= f.file_field :avatar, required: true, class: 'dropify', id: "input-file-now" %>                                                               
+ <%
+=begin%>
+ <div class="dd-content-wrapper">
+      <%= image_tag("cloud_up.svg", class: "cloud-up-img") %>
+      <h3 class="dd-text primary-font">Arrastra un archivo para cargar</h3>
+    </div> 
+  </div>  
+<%
+=end%>
+  <div class="submit-btn-wrapper submit-btn-break">
+    <%= f.submit "Guardar", class: "submit primary-font second-bkgrnd" %>
+  </div>
+<% end %>

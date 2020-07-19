@@ -1,8 +1,40 @@
 .main {
   width: 350px;
   height: 576px;
-  background: #F8F8F8;
   padding: 24px 20px;
+}
+
+.link-font-color {
+  color: #434242;;
+}
+
+input {
+  font-family: Roboto !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #434242 !important;
+}
+
+.primary-font {
+  font-family: Roboto;
+}
+
+.second-font {
+  font-family: Happy Monkey;
+}
+
+.primary-bkgrnd {
+  background:  #F8F8F8;
+}
+
+.second-bkgrnd {
+  background:  #EE4380;
+}
+
+.third-bkgrnd {
+  background: #FFFFFF;
 }
 
 .back-wrapper {
@@ -16,9 +48,19 @@
 
 .back {
   margin-left: 8px;
-  font-family: Roboto;
   font-weight: 300;
   color: #434242
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 310px;
+  height: 254px;
+  box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+  border-radius: 5px;
+  padding: 16px;
 }
 
 .field {
@@ -30,7 +72,6 @@
 }
 
 .label {
-  font-family: Roboto;
   font-size: 14px;
   letter-spacing: 0.02em;
   color: #434242;
@@ -39,7 +80,6 @@
 .field-field {
   width: 278px;
   height: 32px;
-  background: #FFFFFF;
   border: 1px solid #C4CDD5;
   box-sizing: border-box;
   border-radius: 4px;
@@ -54,9 +94,7 @@
 .submit {
   width: 160px;
   height: 48px;
-  background: #EE4380;
   border-radius: 5px;
-  font-family: Roboto;
   font-weight: 500;
   font-size: 18px;
   color: #FFFFFF;
