@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
+*= require dropify
  
  */
 
- @import "dropify";
+@import "dropify";
 @import "bootstrap/scss/bootstrap";
 
  html, body, div, span, applet, object, iframe,
