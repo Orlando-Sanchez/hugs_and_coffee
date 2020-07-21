@@ -1,5 +1,5 @@
 $dropify-width:            100% !default;
-$dropify-height:           200px !default;
+$dropify-height:           100% !default;
 $dropify-font-family:      "Roboto", "Helvetica Neue", "Helvetica", "Arial" !default;
 $dropify-font-size:        14px !default;
 $dropify-line-height:      22px !default;
@@ -28,7 +28,7 @@ $dropify-font-path:        "../fonts" !default;
     overflow: hidden;
     width: $dropify-width;
     max-width: 100%;
-    height: $dropify-height;
+    height: 100% !important;
     padding: 5px 10px;
     font-family: $dropify-font-family;
     font-size: $dropify-font-size;

@@ -9,13 +9,14 @@
   width: 100%;
   height: 1039px;
   background: #F8F8F8;
-  padding: 24px 20px 79px 20px;
+  padding: 0px 20px 79px 20px;
 }
 
 .profile-form-header {
   display: flex;
   justify-content: space-between;
   height: 93px;
+  padding-top: 24px;
   border-bottom: 0.5px solid #C4CDD5;
   margin-bottom: 24px;
 }
@@ -113,31 +114,17 @@
   color: #363636;
 }
 
-.drag-drop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.dropify-customized {
   width: 310px;
   height: 222px;
-  background: #FFFFFF;
-  box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.dd-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.dropify-wrapper {
+  height: 100% !important;
 }
 
-.cloud-up-img {
-  width: 47.33px;
-  height: 30.1px;
-  margin-left: 77.64px;
-}
-
-.dd-text {
+.dropify-custom-font {
+  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -145,9 +132,7 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: #DAE1E7;
-  padding-top: 17.37px;
 }
-
 .submit-btn-break {
   border-top: 0.5px solid #C4CDD5;
   margin-top: 24px;

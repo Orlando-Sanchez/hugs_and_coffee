@@ -65,7 +65,7 @@
   line-height: 29px;
   display: flex;
   align-items: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   text-align: center;
   padding: 0px 10.665px;
 }
@@ -83,10 +83,6 @@
 }
 
 .profile-link-wrapper {
-  display: none;
-}
-
-.signout-dropdown-btn {
   display: none;
 }
 
@@ -174,6 +170,10 @@
   color: #EE4380;
 }
 
+.signout-dropdown {
+  display: none;
+}
+
 @media screen and (min-width: 736px) {
   .header {
     width: 736px;
@@ -203,6 +203,10 @@
     background: #F3F2F2;
     border-radius: 20px;
     margin-bottom: 5px;
+  }
+
+  .dropdown-content-wrapper {
+    display: none;
   }
 }
 
@@ -276,6 +280,7 @@
 }
 
 .dropdown-content-wrapper {
+  display: none;
   padding-left: 6.5px;
   padding-top: 8px;
   width: 247px;
@@ -283,7 +288,6 @@
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   z-index: 1;
   background: #FFFFFF;
@@ -316,7 +320,7 @@
   text-decoration: none !important;
 }
 
-.signout-dropdown:hover .dropdown-content {
+.signout-dropdown:hover .dropdown-content-wrapper {
   display: block;
 }
 

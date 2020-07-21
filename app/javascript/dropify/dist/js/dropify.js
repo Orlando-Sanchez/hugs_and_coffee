@@ -46,7 +46,7 @@ function Dropify(element, options) {
         allowedFormats: ['portrait', 'square', 'landscape'],
         allowedFileExtensions: ['*'],
         messages: {
-            'default': 'Drag and drop a file here or click',
+            'default': 'Arrastra un archivo para cargar',
             'replace': 'Drag and drop or click to replace',
             'remove':  'Remove',
             'error':   'Ooops, something wrong happended.'
