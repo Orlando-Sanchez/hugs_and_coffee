@@ -12,8 +12,20 @@
     <h2>Recibe aprecio y gratitud mediante donaciones online</h2>
   </div>
   <div class="create-profile-link-wrapper">
-    <%= link_to new_user_registration_path, class: "create-profile-link second-bkgrnd" do %>
+    <% if !current_user %>
+      <%= link_to new_user_registration_path, class: "create-profile-link second-bkgrnd" do %>
         <h2 class="create-profile-link-text primary-font">Crear mi perfil</h2>
+      <% end %>
+    <% else %>
+      <% if current_user.profile %>
+        <%= link_to edit_profile_path(id: current_user.profile.id), class: "create-profile-link second-bkgrnd" do %>
+          <h2 class="create-profile-link-text primary-font">Crear mi perfil</h2>
+        <% end %>
+      <% else %>
+        <%= link_to new_profile_path, class: "create-profile-link second-bkgrnd" do %>
+          <h2 class="create-profile-link-text primary-font">Crear mi perfil</h2>
+        <% end %>
+      <% end %>  
     <% end %>
   </div>
 </div>

@@ -1,15 +1,15 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :toggle_profile]
+  before_action :is_published,       only: :show
   
   def new
     @profile = Profile.new
-    # 4.times { @profile.multipliers.build }
-    # count =0
-    # 3.times do |time|
-    #   count += 1
-    #   @profile.multipliers.build(quantity: count)
-    # end
-    # @profile.multipliers.build(quantity: 5)
+    count =0
+    3.times do |time|
+      count += 1
+      @profile.multipliers.build(quantity: count)
+    end
+    @profile.multipliers.build(quantity: 5)
   end
 
   def create
@@ -26,11 +26,15 @@ class ProfilesController < ApplicationController
   end
   
   def edit
-    @profile = Profile.find(params[:id])
+    if current_user.profile.present?
+      @profile = current_user.profile
+    else
+      redirect_to new_profile_url 
+    end
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     if @profile.update(profile_params)
       flash[:success] = "Profile updated"
       redirect_to root_url
@@ -48,6 +52,11 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:fullname, :occupation, :biography, :coffee_price, :currency_sign, :avatar, multipliers_attributes: [:quantity])
+    params.require(:profile).permit(:fullname, :occupation, :biography, :coffee_price, :currency_sign, :avatar, multipliers_attributes: [:id, :quantity])
+  end
+
+  def is_published
+    @profile = Profile.find(params[:id])
+    redirect_to(root_url) unless @profile.is_published
   end
 end

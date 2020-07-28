@@ -78,6 +78,19 @@
   padding: 12px 20px;
 }
 
+.profile-avatar {
+  box-sizing: border-box;
+  margin-right: 14px;
+  border-radius: 50%;
+}
+
+.img-circle {
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 50%;
+  border: 2px solid #EE4380;
+}
+
 .profile-link {
   display: flex;
 }
@@ -132,7 +145,7 @@
   display: none;
   position: absolute;
   width: 290px;
-  height: 1039px;
+  height: 100%;
   background: #FFFFFF;
   z-index: 1;
 }
@@ -212,7 +225,7 @@
 
 @media screen and (min-width: 1440px) {
 .header {
-  width: 1440px;
+  width: 100%;
 }
 
 .header-logo {
@@ -267,6 +280,7 @@
 .signout-dropdown {
   position: relative;
   display: inline-block;
+  border-left: 1px solid #C4CDD5;
 }
 
 .signout-dropbtn {
@@ -275,7 +289,6 @@
   padding: 12px 24px;
   background: #FFFFFF;
   border: none;
-  border-left: 1px solid #C4CDD5;
   cursor: pointer;
 }
 

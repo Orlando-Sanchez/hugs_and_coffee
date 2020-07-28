@@ -13,21 +13,12 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%
-=begin%>
- <% if controller_name === "home" || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
-      <%= render 'layouts/main_header' %>
-    <% elsif %>
-
-    <% end %> 
-<%
-=end%>
- <%= link_to "Login", new_user_session_path %>
+    <%= yield %>
+    <%= link_to "Login", new_user_session_path %>
     <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% end %> 
-    <%= yield %>
+    <% end %>  
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> 
   </body>
 </html>

@@ -21,7 +21,6 @@ import dropify from '../dropify/src/js/dropify'
 
 
 $(document).on("turbolinks:load", function()  {
-  debugger
   $('.dropify').dropify();
   console.log($)
 })

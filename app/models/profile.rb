@@ -5,4 +5,5 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :multipliers
   validates :user, presence: true
   validates :fullname, :occupation, :biography, :coffee_price, :currency_sign, presence: true
+  validates_length_of :multipliers, maximum: 4
 end

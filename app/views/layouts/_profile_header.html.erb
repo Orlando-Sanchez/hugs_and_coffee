@@ -1,9 +1,10 @@
 <header class="header third-bkgrnd profile-header">
   <%= link_to profile_path, class: "profile-link" do %>
     <% if @profile.avatar.present? %>
-      <img src="<%=@profile.avatar%>" alt="Avatar">
+      <div class="profile-avatar"><%= image_tag @profile.avatar, class: 'img-circle' %></div>
     <% else %>
       <div id="initials-wrapper" class="second-font" data-fullname="<%=@profile.fullname%>"></div>
+      <%= javascript_pack_tag 'profile_header_initials.js' %>
     <%end%>
     <div class="header-profile-data">
       <div id="header-profile-fullname" class="primary-font">
@@ -22,4 +23,3 @@
     </div>
   <% end %>
 </header> 
-<%= javascript_pack_tag 'profile_header_fullname.js' %>
