@@ -37,7 +37,6 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
     if @profile.update(profile_params)
       flash[:success] = "Profile updated"
-      redirect_to root_url
     else
       render 'edit'
     end

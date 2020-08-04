@@ -100,6 +100,34 @@ input {
   cursor: pointer;
 }
 
+.delete-btn {
+  border: 1px solid #98234D;
+  margin-top: 24px;
+}
+
+.delete-btn-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #98234D;
+}
+
+.save-btn-text {
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+  padding-left: 47px !important;
+}
+
 @media screen and (min-width: 736px) {
 
 .main {
@@ -141,6 +169,16 @@ input {
 
 .submit {
   font-size: 20px;
+}
+
+.delete-btn {
+  margin-top: 0;
+  margin-right: 32px;
+}
+
+.save-btn-text {
+  font-size: 20px !important;
+  line-height: 23px !important;
 }
 }
 
@@ -187,5 +225,10 @@ input {
   width: 224px;
   height: 64px;
   font-size: 24px;
+}
+
+.submit-2 {
+  width: 160px !important;
+  height: 48px !important;
 }
 }

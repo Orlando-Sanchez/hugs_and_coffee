@@ -1,9 +1,13 @@
 <header class="header third-bkgrnd">
   <div class="admin-header second-bkgrnd">
-    <div id="menu-icon">
-      <div class="menu-icon-line"></div>
-      <div class="menu-icon-line"></div>
-      <div class="menu-icon-line"></div>
+    <div>
+      <% unless current_page?(new_profile_path) %>
+        <div id="menu-icon">
+          <div class="menu-icon-line"></div>
+          <div class="menu-icon-line"></div>
+          <div class="menu-icon-line"></div>
+        </div>
+      <% end %>
     </div>
     <%= link_to root_path, class: "big-logo-font second-font" do %>
       <h1>A&C</h1>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_213047) do
+ActiveRecord::Schema.define(version: 2020_08_04_180758) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_213047) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "account_number"
     t.index ["user_id"], name: "index_monetary_accounts_on_user_id"
   end
 
@@ -79,11 +80,11 @@ ActiveRecord::Schema.define(version: 2020_06_27_213047) do
   end
 
   create_table "publications", force: :cascade do |t|
-    t.text "subtitle"
-    t.integer "user_id"
+    t.text "subtitle", null: false
+    t.integer "profile_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_publications_on_user_id"
+    t.index ["profile_id"], name: "index_publications_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,5 +104,5 @@ ActiveRecord::Schema.define(version: 2020_06_27_213047) do
   add_foreign_key "monetary_accounts", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "multipliers", "profiles", on_update: :cascade, on_delete: :cascade
   add_foreign_key "profiles", "users", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "publications", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "publications", "profiles", on_update: :cascade, on_delete: :cascade
 end
