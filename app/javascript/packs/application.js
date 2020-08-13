@@ -22,5 +22,4 @@ import dropify from '../dropify/src/js/dropify'
 
 $(document).on("turbolinks:load", function()  {
   $('.dropify').dropify();
-  console.log($)
 })
