@@ -1,4 +1,4 @@
-<div class="profile-edit-view">
+<div>
   <div id="profile-menu">
     <div class="profile-menu-header">
       <%= link_to @profile do %>
@@ -15,18 +15,14 @@
       <%= render 'layouts/admin_header' %>
       <div class="profile-form-desktop">
         <%= render 'layouts/admin-menu-desktop' %>
-        <div class="profile-form-container">
-          <div class="profile-form-header"> 
-            <div class="profile-form-title primary-font">Perfil del usuario</div>
+        <div class="publication-form-container">
+          <div class="publication-form-header">
+            <div class="profile-form-title primary-font">Editar imágenes</div>
           </div>
-          <div class="profile-form-small">
-            <%= render 'form', object: @profile %>
-          </div>
-          <div class="profile-form-big">
-            <%= render 'form_desktop', object: @profile %>
-          </div>
+          <%= render 'form_edit', object: @publication %>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'profile_menu.js' %> 

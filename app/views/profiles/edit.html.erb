@@ -8,25 +8,13 @@
       <% end %>
       <%= image_tag("Vectorprofilemenu.svg", id: "vectorprofilemenu-img") %>
     </div>
-    <div class="links-submenu-wrapper">
-      <div class="highlight-section-link section-link primary-font">Perfil</div>
-      <%
-=begin%>
- <div class="section-link primary-font">Imágenes</div>
-      <div class="section-link primary-font">Cuentas</div> 
-<%
-=end%>
-      <div class="section-link primary-font">
-        <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'link-font-color' %>
-      </div>   
-    </div>
+    <%= render 'layouts/admin_menu' %>
   </div>
   <div id="profile-admin-dark">
     <div id="profile-form-main">
-      <%= render 'layouts/admin_header' %>
+      <%= render 'layouts/admin_header'%>
       <div class="profile-form-desktop">
-        <div class="profile-menu-desktop">
-        </div>
+        <%= render 'layouts/admin-menu-desktop'%>
         <div class="profile-form-container">
           <div class="profile-form-header"> 
             <div class="profile-form-title primary-font">Perfil del usuario</div>
