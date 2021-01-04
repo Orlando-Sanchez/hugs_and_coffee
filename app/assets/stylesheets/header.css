@@ -1,5 +1,5 @@
 .header {
-  width: 350px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   height: 64px;
@@ -52,11 +52,11 @@
 }
 
 .admin-header {
-  width: 350px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   height: 64px; 
-  padding: 24px 142.19px 24px 20px; 
+  padding: 24px 142.19px 24px 20px;
 }
 
 .big-logo-font {
@@ -157,11 +157,6 @@
   padding: 32px;
 }
 
-.vectorprofilemenu-img {
-  width: 17px;
-  height: 17px;
-}
-
 .links-menu-wrapper {
   display: flex;
   flex-direction: column;
@@ -220,11 +215,11 @@
 
 @media screen and (min-width: 736px) {
   .header {
-    width: 736px;
+    width: 100%;
   }
 
   .admin-header {
-    width: 736px;
+    width: 100%;
     padding-left: 37px;
     padding-right: 299px;
   }

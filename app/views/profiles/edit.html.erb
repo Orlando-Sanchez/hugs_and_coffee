@@ -16,7 +16,15 @@
       <div class="profile-form-desktop">
         <%= render 'layouts/admin-menu-desktop'%>
         <div class="profile-form-container">
-          <div class="profile-form-header"> 
+          <div id="profile-form-header">
+            <% flash.each do |message_type, msg| %>
+              <%= content_tag(:div, id: "msg-wrapper", class: "msg-wrapper #{message_type}") do %>
+                <%= content_tag(:div, class: "vectormsg-wrapper") do %>
+                  <%= image_tag("Vectormsg.svg", id: "vectormsgwrapper-img") %>                
+                <% end %>
+                <%= content_tag(:h6, msg, class: "primary-font") %>
+              <% end %>
+            <% end %>
             <div class="profile-form-title primary-font">Perfil del usuario</div>
             <div class="btn-section">
               <div id="btn-wrapper">
@@ -38,5 +46,4 @@
     </div>
   </div>
 </div>
-<%= javascript_pack_tag 'publish_profile.js' %>
-<%= javascript_pack_tag 'profile_menu.js' %>
+ 

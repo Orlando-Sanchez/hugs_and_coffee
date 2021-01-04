@@ -3,20 +3,25 @@ class ProfilesController < ApplicationController
   before_action :is_published,       only: :show
   
   def new
-    @profile = Profile.new
-    count =0
-    3.times do |time|
-      count += 1
-      @profile.multipliers.build(quantity: count)
+    if current_user.profile.present?
+      redirect_to root_url, notice: "Ya existe el perfil"
+    else     
+      @profile = Profile.new
+      count =0
+      3.times do |time|
+        count += 1
+        @profile.multipliers.build(quantity: count)
+      end
+      @profile.multipliers.build(quantity: 5)
     end
-    @profile.multipliers.build(quantity: 5)
   end
 
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
-      redirect_to root_url
+      redirect_to root_url, notice: "El perfil ha sido creado"
     else
+      flash.now[:alert] = "No se pudo crear el perfil"
       render 'new'
     end
   end
@@ -36,8 +41,13 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
     if @profile.update(profile_params)
-      flash[:success] = "Profile updated"
+      if @profile.is_published
+        redirect_to profile_url, notice: "El perfil ha sido actualizado"
+      else 
+        redirect_to edit_profile_url, notice: "El perfil ha sido actualizado"
+      end
     else
+      flash.now[:alert] = "No se pudo actualizar el perfil"
       render 'edit'
     end
   end

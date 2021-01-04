@@ -22,8 +22,9 @@ class PublicationsController < ApplicationController
   def create
     @publication = current_user.profile.publications.build(publication_params)
     if @publication.save
-      redirect_to root_url
+      redirect_to publications_url, notice: "La publicación ha sido creada"
     else
+      flash.now[:alert] = "No se pudo crear la publicación"
       render 'new'
     end
   end
@@ -40,9 +41,9 @@ class PublicationsController < ApplicationController
   def update
     @publication = current_user.profile.publications.find(params[:id])
     if @publication.update(publication_params)
-      flash[:success] = "Publication updated"
-      redirect_to root_url
+      redirect_to publications_url, notice: "La publicación ha sido actualizada"
     else
+      flash.now[:alert] = "No se pudo actualizar la publicación"
       render 'edit'
     end
   end
@@ -50,9 +51,9 @@ class PublicationsController < ApplicationController
   def destroy
     @publication = Publication.find(params[:id])
     if @publication.destroy
-      flash.notice = "Publication destroyed!"
-      redirect_to root_url
+      redirect_to publications_url, notice: "La publicación ha sido eliminada"
     else 
+      flash.now[:alert] = "No se pudo eliminar la publicación"
       render 'edit'
     end
   end

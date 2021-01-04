@@ -1,6 +1,5 @@
 class MonetaryAccountsController < ApplicationController
   before_action :authenticate_user!
-
   def index
     if current_user.profile.present?
       @profile = current_user.profile
@@ -22,8 +21,9 @@ class MonetaryAccountsController < ApplicationController
   def create
     @monetary_account = current_user.monetary_accounts.build(monetary_account_params)
     if @monetary_account.save
-      redirect_to root_url
+      redirect_to root_url, notice: "La cuenta ha sido creada"
     else
+      flash.now[:alert] = "No se pudo crear la cuenta"
       render 'new'
     end
   end
@@ -40,9 +40,9 @@ class MonetaryAccountsController < ApplicationController
   def update
     @monetary_account = current_user.monetary_accounts.find(params[:id])
     if @monetary_account.update(monetary_account_params)
-      flash[:success] = "Account updated"
-      redirect_to root_url
+      redirect_to monetary_accounts_url, notice: "Cuenta actualizada"
     else
+      flash.now[:alert] = "No se pudo actualizar la cuenta"
       render 'edit'
     end
   end
@@ -50,9 +50,9 @@ class MonetaryAccountsController < ApplicationController
   def destroy
     @monetary_account = MonetaryAccount.find(params[:id])
     if @monetary_account.destroy
-      flash.notice = "Account destroyed!"
-      redirect_to root_url
-    else 
+      redirect_to monetary_accounts_url, notice: "La cuenta ha sido eliminada"
+    else
+      flash.now[:alert] = "No se pudo eliminar la cuenta"
       render 'edit'
     end
   end

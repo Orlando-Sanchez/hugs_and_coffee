@@ -32,6 +32,14 @@ input {
   background: #FFFFFF;
 }
 
+.notice {
+  background: #E5FAE0;
+}
+
+.alert {
+  background: #FAE0E9;
+}
+
 .back-wrapper {
   margin-bottom: 24px;
 }
@@ -128,7 +136,60 @@ input {
   padding-left: 47px !important;
 }
 
+.vectormsg-wrapper {
+  padding-left: 280px;
+}
+
+.msg-wrapper {
+  position: absolute;
+  width: 310px;
+  height: 93px;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #434242;
+  z-index: 2;
+  left: 20px;
+  padding-top: 8px;
+}
+
+#vectorprofilemenu-img {
+  width: 17px;
+  height: 17px;
+}
+
+#vectormsgwrapper-img {
+  width: 17px;
+  height: 17px;
+}
+
+#vectormsgwrapper-img:hover {
+  cursor: pointer;
+}
+
+.msg-fix {
+  margin-top: 25px;
+}
+
+.hideDiv {
+  display: none;
+}
+
 @media screen and (min-width: 736px) {
+
+.vectormsg-wrapper {
+  padding-left: 620px;
+}
+
+.msg-wrapper {
+  font-size: 21px;
+  width: 660px;
+  left: 38px;
+  top: 85px
+}
 
 .main {
   width: 736px;
@@ -183,6 +244,17 @@ input {
 }
 
 @media screen and (min-width: 1440px) {
+
+.vectormsg-wrapper {
+  padding-left: 1150px;
+}
+  
+.msg-wrapper {
+  font-size: 24px;
+  width: 1200px;
+  left: 200px;
+  top: 85px
+}
   
 .main {
   width: 100%;

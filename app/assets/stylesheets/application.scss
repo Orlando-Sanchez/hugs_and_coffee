@@ -19,6 +19,16 @@
 @import "dropify";
 @import "bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: 'Happy Monkey';
+  src: url(asset-path('HappyMonkey-Regular.ttf')) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(asset-path('Roboto-Regular.ttf')) format("truetype");
+}
+
  html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -74,4 +84,16 @@ body {
 a, a:hover {
   text-decoration: none !important;
   color: #434242;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

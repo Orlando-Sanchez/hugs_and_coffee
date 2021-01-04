@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 350px;
-  height: 576px;
+  width: 100%;
+  height: 90vh;
   background: #F8F8F8;
-  padding: 24px 47px 135px 47px;
+  padding: 24px 47px 80px 47px;
 }
 
 .coffees-img-wrapper {
@@ -19,16 +19,13 @@
 }
 
 .intro-text-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin: 32px 0;
   padding: 0 16px;
 }
 
 .intro-text-thick {
   height: 43px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 24px;
   text-align: center;
 }
@@ -72,7 +69,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 350px;
+  width: 100%;
   height: 640px;
   padding: 64px 34px 106.9px 35px;
 }
@@ -113,7 +110,7 @@
 
 @media screen and (min-width: 736px) {
 .home-one-container {
-  width: 736px;
+  width: 100%;
   height: 960px;  
   padding: 40px 75px 319px 76px;
 }
@@ -151,7 +148,7 @@
 }
 
 .home-two-container {
-  width: 736px;
+  width: 100%;
   height: 1024px;
   padding: 100px 112px 179.07px 113px;
 }
@@ -182,7 +179,7 @@
 
 @media screen and (min-width: 1440px) {
 .home-one-container {
-  width: 1440px;  
+  width: 100%;  
   padding: 40px 392px 231px 392px;
 }
 
@@ -194,7 +191,8 @@
 .intro-text-wrapper {
   margin-top: 48.37px;
   margin-bottom: 48px;
-  padding: 0 20px;
+  padding-left: 90px;
+  text-align: center;
 }
 
 .intro-text-thick {
@@ -228,13 +226,13 @@
 }
 
 .home-two-container {
-  width: 1440px;
+  width: 100%;
   padding: 90px 392px 139.56px 392px;
 }
 
 .intro-text-container {
   margin-bottom: 40px;
-  padding: 0;
+  padding: 0 0 0 90px;
 }
 
 .intro-text-thick-2 {

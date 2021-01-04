@@ -19,12 +19,36 @@ document.addEventListener("turbolinks:load", function() {
   if (toggleBtn && btnLabel) {
     if (isPublished == true) {
       toggleBtn.classList.add('active');
-      btnLabel.innerText = "Despublicar perfil";
+      btnLabel.innerText = "Ocultar perfil";
     } else {
       btnLabel.innerText = "Publicar perfil";
     };
   };
 });
+
+const hideDiv = () => {
+  setTimeout(() => {
+    const div = document.getElementById('msg-wrapper')
+    div.parentNode.removeChild(div);
+  }, 3000)
+}
+
+const handleNotification = (message) => {
+  const notificationDiv = document.createElement("div")
+  const profileFormHeader = document.querySelector("#profile-form-header")
+  const imageWrapper = document.createElement("div")
+  const h6 = document.createElement("H6")
+  const msg = document.createTextNode(message)
+  notificationDiv.setAttribute("id", "msg-wrapper")
+  notificationDiv.classList.add("msg-wrapper")
+  notificationDiv.classList.add("notice")
+  imageWrapper.classList.add("vectormsg-wrapper")
+  h6.classList.add("primary-font")
+  h6.classList.add("msg-fix")
+  h6.appendChild(msg)
+  notificationDiv.appendChild(h6)
+  profileFormHeader.appendChild(notificationDiv)
+}
 
 let handleToggle = () => {
   console.log('click');
@@ -43,18 +67,24 @@ let handleToggle = () => {
       isPublished = response.profile.is_published;
       if (isPublished == true) {
         toggleBtn.classList.add('active');
-        btnLabel.innerText = "Despublicar perfil";
+        btnLabel.innerText = "Ocultar perfil";
+        const message = 'El perfil ha sido publicado'
+        handleNotification(message)
+        hideDiv()
       } else {
         toggleBtn.classList.remove('active');
         btnLabel.innerText = "Publicar perfil";
+        const message2 = 'El perfil ya no es visible'
+        handleNotification(message2)
+        hideDiv()
       };
       buttonClickable.style.pointerEvents = "auto";
-      console.log('success');
-      // Mostrar success en una notificacion
     }
   })
   .catch(error => {
-    console.error('Error:', error)
+    const errorMessage = 'No se pudo realizar la acción'
+    handleNotification(errorMessage)
+    hideDiv()
     buttonClickable.style.pointerEvents = "auto";
     // Mostrar error en una notificacion
   })

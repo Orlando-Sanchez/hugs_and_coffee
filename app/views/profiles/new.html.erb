@@ -8,15 +8,14 @@
       <% end %>
       <%= image_tag("Vectorprofilemenu.svg", id: "vectorprofilemenu-img") %>
     </div>
-    <%= render 'layouts/admin_menu' %>
   </div>
   <div id="profile-admin-dark">
     <div id="profile-form-main">
       <%= render 'layouts/admin_header' %>
       <div class="profile-form-desktop">
-        <%= render 'layouts/admin-menu-desktop' %>
+        <div class="admin-menu-desktop"></div>
         <div class="profile-form-container">
-          <div class="profile-form-header"> 
+          <div id="profile-form-header"> 
             <div class="profile-form-title primary-font">Perfil del usuario</div>
           </div>
           <div class="profile-form-small">

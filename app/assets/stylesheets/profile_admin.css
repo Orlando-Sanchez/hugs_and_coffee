@@ -1,5 +1,6 @@
 .admin-menu-desktop {
   display: none;
+  background: #F8F8F8;
 }
 
 .profile-edit-view {
@@ -8,23 +9,26 @@
 
 #profile-admin-dark {
   height: 100%;
+  width: 100%;
 }
 
 #profile-form-main {
   height: 100%;
+  width: 100%;
 }
 
 .profile-form-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 350px;
   height: 1017px;
   background: #F8F8F8;
-  padding: 0px 20px 79px 20px
+  padding: 0px 20px 79px 20px;
+  border-left: 0.5px solid #C4CDD5
 }
 
-.profile-form-header {
+#profile-form-header {
   display: flex;
   justify-content: space-between;
   height: 93px;
@@ -158,6 +162,7 @@
 
   .profile-form-container {
     height: 1104px;
+    width: 736px;
     padding: 0 38px 45px 38px;
   }
 
@@ -165,7 +170,7 @@
     display:flex;
   }
 
-  .profile-form-header {
+  #profile-form-header {
     height: 117px;
     padding-top: 40px;
     margin-bottom: 32px;
@@ -223,6 +228,7 @@
   
   .profile-edit-view {
     height: 880px;
+    width: 100%;
   }
 
   .profile-form-desktop {
@@ -234,8 +240,7 @@
   .admin-menu-desktop {
     display: flex;
     flex-direction: column;
-    width: 256px;
-    border-right: 0.5px solid #C4CDD5;
+    width: 255px;
     padding-left: 48px;
     padding-top: 32px;
   }
@@ -272,11 +277,11 @@
 
   .profile-form-container {
     height: 100%;
-    width: 82.23%;
+    width: 84%;
     padding: 5px 70px 62px 70px;
   }
 
-  .profile-form-header {
+  #profile-form-header {
     height: 93px;
     padding-top: 5px;
   }

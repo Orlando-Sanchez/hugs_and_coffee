@@ -5,20 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'publish_profile.js' %>
+    <%= javascript_pack_tag 'profile_menu.js' %>
+    <%= javascript_pack_tag 'hide_flash_msg.js' %>
+    <%= javascript_pack_tag 'profile_form_validation.js' %>
   </head>
 
   <body>
     <%= yield %>
-    <%= link_to "Login", new_user_session_path %>
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% end %>  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
   </body>
 </html>
