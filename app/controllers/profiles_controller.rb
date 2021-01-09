@@ -27,7 +27,10 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    if current_user.profile.present? 
+      @profile = current_user.profile
+      @publications = current_user.profile.publications.all
+    end
   end
   
   def edit

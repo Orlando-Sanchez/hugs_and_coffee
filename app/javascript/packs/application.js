@@ -3,13 +3,16 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
 import 'bootstrap'
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 require("jquery")
-import dropify from '../dropify/src/js/dropify'
+window.$ = window.JQuery = JQuery;
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -20,6 +23,29 @@ import dropify from '../dropify/src/js/dropify'
 // const imagePath = (name) => images(name, true)
 
 
-$(document).on("turbolinks:load", function()  {
-  $('.dropify').dropify();
-})
+document.addEventListener("turbolinks:load", function() {
+  console.log('prueba dentro del event listener');
+  debugger
+  $('.owl-carousel').owlCarousel({
+    stagePadding: 50,
+    loop: true,
+    rtl:true,    
+    autoPlay: 1000,
+    margin:10,
+    responsive:{
+      0:{
+        items:1
+       },
+      736:{
+       items:3
+       },
+      1440:{
+      items:3
+      }
+    }
+  });
+});
+
+document.addEventListener("turbolinks:before-cache", function() {
+  $('.owl-carousel').owlCarousel('destroy');
+});
